@@ -1,0 +1,129 @@
+/* --- App.css (New Two-Part Layout) --- */
+
+/* --- 1. Global Styles & Theme Variables --- */
+:root {
+  --top-section-bg: #c53030;
+  --bottom-section-bg: #ffffff;
+  --card-bg: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --accent-purple: #4f46e5;
+  --accent-purple-light: #eef2ff;
+  --border-color: #e5e7eb;
+  --shadow-color: rgba(101, 119, 134, 0.1);
+  --shadow-color-heavy: rgba(101, 119, 134, 0.2);
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-sans);
+  background-color: var(--bottom-section-bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- 2. NEW Two-Part Layout Styles --- */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.top-section {
+  background-color: var(--top-section-bg);
+  color: white;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.app-logo {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  height: 50px;
+  width: auto;
+}
+
+/* --- MODIFIED ---: This rule has been updated for a more professional look. */
+.welcome-message {
+  font-size: 2.5rem;
+  font-weight: 600; /* Softer than bold (700) */
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.5px; /* Adds a bit of air between characters */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.bottom-section {
+  flex-grow: 1;
+  background-color: var(--bottom-section-bg);
+  padding: 2.5rem;
+}
+
+
+/* --- 3. EXISTING Table Card Styles (Unchanged) --- */
+.table-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px var(--shadow-color), 0 2px 8px var(--shadow-color-heavy);
+  overflow: hidden;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-title-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.title-badge {
+  display: inline-block;
+  background-color: var(--accent-purple-light);
+  color: var(--accent-purple);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.filter-button:hover {
+  background-color: #f9fafb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
